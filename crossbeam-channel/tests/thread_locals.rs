@@ -1,4 +1,5 @@
 //! Tests that make sure accessing thread-locals while exiting the thread doesn't cause panics.
+#![cfg(not(miri))] // TODO
 
 use std::thread;
 use std::time::Duration;

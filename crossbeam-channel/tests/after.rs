@@ -1,4 +1,5 @@
 //! Tests for the after channel flavor.
+#![cfg(not(miri))] // TODO
 
 use std::sync::atomic::AtomicUsize;
 use std::sync::atomic::Ordering;
