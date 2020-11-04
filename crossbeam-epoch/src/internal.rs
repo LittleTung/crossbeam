@@ -374,6 +374,7 @@ pub struct Local {
 
 // Make sure `Local` is less than or equal to 2048 bytes.
 // https://github.com/crossbeam-rs/crossbeam/issues/551
+#[cfg(not(feature = "sanitize"))] // `feature = "sanitize"` reduces the size of `Local`
 #[test]
 fn local_size() {
     assert_eq!(2040, core::mem::size_of::<Local>());
